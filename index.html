@@ -4,15 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#073d35">
-  <meta name="description" content="GrowthLog Lounge의 Wi-Fi, TV, 화장실, 퇴실 안내를 한곳에서 확인하세요.">
-  <title>GrowthLog Lounge Guide</title>
+  <meta name="description" content="GrowthLog Lounge의 Wi-Fi, TV, 화장실, 퇴실 및 CCTV 안내를 한곳에서 확인하세요.">
+  <title>GrowthLog Lounge Space Guide</title>
   <link rel="stylesheet" href="./css/style.css">
   <script src="./js/app.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">본문으로 바로가기</a>
   <header class="site-header">
-    <a class="brand" href="#home" aria-label="GrowthLog Lounge Guide 홈">
+    <a class="brand" href="#home" aria-label="GrowthLog Lounge Space Guide 홈">
       <span class="brand-mark" aria-hidden="true">
         <svg viewBox="0 0 32 32" focusable="false">
           <path d="M16 25V14"></path>
@@ -30,48 +30,56 @@
     <section class="view home-view is-active" id="home" data-view="home" aria-labelledby="home-title">
       <div class="hero">
         <p class="eyebrow">WELCOME TO</p>
-        <h1 id="home-title">GrowthLog<br><span>Lounge Guide</span></h1>
-        <p>처음 방문하셨나요?<br>필요한 안내를 선택해주세요.</p>
+        <h1 id="home-title">GrowthLog<br><span>Lounge</span></h1>
+        <p>처음 방문하셨나요?<br>필요한 안내를 확인해주세요.</p>
         <div class="hero-line" aria-hidden="true"></div>
       </div>
 
+      <figure class="image-card home-visual">
+        <button class="image-open" type="button" data-image="./images/01_welcome.png" data-alt="GrowthLog Lounge 환영 및 기본 이용 안내">
+          <img src="./images/01_welcome.png" alt="GrowthLog Lounge 환영 및 기본 이용 안내" width="884" height="1779">
+          <span>눌러서 크게 보기</span>
+        </button>
+      </figure>
+
+      <div class="section-intro">
+        <p>SPACE GUIDE</p>
+        <h2>이용 안내</h2>
+      </div>
       <nav class="guide-grid" aria-label="라운지 안내 메뉴">
-        <a class="guide-card guide-card--wide" href="#welcome">
-          <span class="card-icon" aria-hidden="true">👋</span>
-          <span><b>라운지 이용 안내</b><small>기본 이용 규칙을 확인하세요</small></span>
+        <a class="guide-card guide-card--wide" href="#quick">
+          <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4.5h11a2 2 0 0 1 2 2v13H7a2 2 0 0 1-2-2z"/><path d="M8.5 8h6M8.5 11.5h6M8.5 15h4"/><path d="M18 7h1a1 1 0 0 1 1 1v11.5h-2"/></svg></span>
+          <span><b>한눈에 보는 이용 가이드</b><small>필수 이용 정보를 한 번에 확인하세요</small></span>
           <span class="arrow" aria-hidden="true">→</span>
         </a>
-        <a class="guide-card" href="#wifi"><span class="card-icon" aria-hidden="true">⌁</span><span><b>Wi-Fi</b><small>네트워크 안내</small></span></a>
-        <a class="guide-card" href="#tv"><span class="card-icon" aria-hidden="true">▣</span><span><b>TV 연결</b><small>HDMI 이용 안내</small></span></a>
-        <a class="guide-card" href="#restroom"><span class="card-icon" aria-hidden="true">男女</span><span><b>화장실</b><small>3F / 5F</small></span></a>
-        <a class="guide-card" href="#checkout"><span class="card-icon" aria-hidden="true">✓</span><span><b>퇴실 안내</b><small>체크리스트</small></span></a>
-        <a class="guide-card guide-card--wide guide-card--warning" href="#staff">
-          <span class="card-icon" aria-hidden="true">!</span>
-          <span><b>관계자 외 출입 금지</b><small>운영 물품 보관 공간 안내</small></span>
+        <a class="guide-card" href="#wifi"><span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 8.7a14 14 0 0 1 18 0M6.5 12.2a9 9 0 0 1 11 0M9.8 15.6a4 4 0 0 1 4.4 0"/><circle cx="12" cy="19" r="1"/></svg></span><span><b>Wi-Fi</b><small>네트워크 안내</small></span></a>
+        <a class="guide-card" href="#tv"><span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="13" rx="2"/><path d="M8 21h8M12 17.5V21"/></svg></span><span><b>TV 연결</b><small>HDMI 이용 안내</small></span></a>
+        <a class="guide-card" href="#restroom"><span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="7" cy="5" r="2"/><path d="M4.5 21v-6H3l1-6h6l1 6H9.5v6M15.5 21v-7H14V9h6v5h-1.5v7M17 3.5a2 2 0 1 1 0 4"/></svg></span><span><b>화장실</b><small>3F / 5F</small></span></a>
+        <a class="guide-card" href="#checkout"><span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="m8 8 1.5 1.5L12 7M14 8h3M8 14l1.5 1.5L12 13M14 14h3"/></svg></span><span><b>퇴실 안내</b><small>체크리스트</small></span></a>
+        <a class="guide-card guide-card--wide" href="#cctv">
+          <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="14" height="12" rx="3"/><circle cx="10" cy="12" r="3"/><path d="m17 10 4-2v8l-4-2"/></svg></span>
+          <span><b>CCTV 안내</b><small>안전한 공간 운영을 위한 촬영 안내</small></span>
           <span class="arrow" aria-hidden="true">→</span>
         </a>
       </nav>
 
       <aside class="help-card" aria-label="관리자 문의 안내">
         <span class="help-mark" aria-hidden="true">?</span>
-        <div><b>Need Help?</b><p>도움이 필요하면 현장 안내 또는 운영팀을 확인해주세요.</p></div>
+        <div><b>Need Help?</b><p>도움이 필요하시면 현장 안내 또는 운영팀에 문의해주세요.</p></div>
       </aside>
-      <p class="home-signature">Learn <i>·</i> Connect <i>·</i> Build</p>
     </section>
 
-    <section class="view detail-view" id="welcome" data-view="welcome" aria-labelledby="welcome-title" hidden>
-      <div class="detail-head"><a href="#home" class="back-link">← 홈</a><p>WELCOME</p><h2 id="welcome-title">라운지 이용 안내</h2><span>좋은 사람들이, 더 좋은 것을 만들어가는 공간입니다.</span></div>
-      <div class="rule-strip" aria-label="기본 이용 수칙"><span>예약시간 준수</span><span>정숙한 이용</span><span>음식물 주의</span><span>깨끗한 정리</span></div>
-      <figure class="image-card"><button class="image-open" type="button" data-image="./images/01_welcome.png" data-alt="GrowthLog Lounge 환영 및 기본 이용 안내"><img src="./images/01_welcome.png" alt="GrowthLog Lounge 환영 및 기본 이용 안내" width="883" height="1780"><span>눌러서 크게 보기</span></button></figure>
-      <figure class="image-card image-card--landscape"><figcaption><b>한눈에 보는 이용 가이드</b><span>Wi-Fi, TV 연결, 이용 수칙과 퇴실 안내</span></figcaption><button class="image-open" type="button" data-image="./images/02_quick_guide.png" data-alt="GrowthLog Lounge 한눈에 보는 이용 가이드"><img src="./images/02_quick_guide.png" alt="GrowthLog Lounge 한눈에 보는 이용 가이드" width="1536" height="1024"><span>눌러서 크게 보기</span></button></figure>
+    <section class="view detail-view" id="quick" data-view="quick" aria-labelledby="quick-title" hidden>
+      <div class="detail-head"><a href="#home" class="back-link">← 홈</a><p>QUICK GUIDE</p><h2 id="quick-title">한눈에 보는 이용 가이드</h2><span>Wi-Fi, TV 연결, 이용 수칙과 퇴실 안내를 확인하세요.</span></div>
+      <figure class="image-card image-card--landscape"><button class="image-open" type="button" data-image="./images/02_quick_guide.png" data-alt="GrowthLog Lounge 한눈에 보는 이용 가이드"><img src="./images/02_quick_guide.png" alt="GrowthLog Lounge 한눈에 보는 이용 가이드" width="1536" height="1024"><span>눌러서 크게 보기</span></button></figure>
     </section>
 
     <section class="view detail-view" id="wifi" data-view="wifi" aria-labelledby="wifi-title" hidden>
       <div class="detail-head"><a href="#home" class="back-link">← 홈</a><p>CONNECT</p><h2 id="wifi-title">Wi-Fi 안내</h2><span>빠르고 편안하게 인터넷을 이용하세요.</span></div>
       <div class="wifi-panel">
-        <span class="wifi-symbol" aria-hidden="true">◉</span>
+        <span class="wifi-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 8.7a14 14 0 0 1 18 0M6.5 12.2a9 9 0 0 1 11 0M9.8 15.6a4 4 0 0 1 4.4 0"/><circle cx="12" cy="19" r="1"/></svg></span>
         <div class="credential"><small>Network</small><strong>GROWTH LAUNGE</strong></div>
-        <div class="credential"><small>Password</small><strong id="wifi-password">GROWTH1703-2!</strong></div>
+        <div class="credential"><small>Password</small><strong id="wifi-password">growth1703-2!</strong></div>
         <button class="primary-button" id="copy-password" type="button">비밀번호 복사</button>
         <p class="copy-feedback" id="copy-feedback" role="status" aria-live="polite"></p>
       </div>
@@ -79,7 +87,7 @@
 
     <section class="view detail-view" id="tv" data-view="tv" data-guide="tv" aria-labelledby="tv-title" hidden>
       <div class="detail-head"><a href="#home" class="back-link">← 홈</a><p>DISPLAY</p><h2 id="tv-title">TV 연결 안내</h2><span>HDMI를 이용해 노트북을 연결할 수 있습니다.</span></div>
-      <div class="status-card"><span class="status-icon" aria-hidden="true">▣</span><div><small>TV 연결 상세 안내</small><strong>준비 중입니다</strong><p>리모컨 사진과 연결 절차가 준비되면 이곳에 안내됩니다.</p></div></div>
+      <div class="status-card"><span class="status-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="13" rx="2"/><path d="M8 21h8M12 17.5V21"/></svg></span><div><small>TV 연결 상세 안내</small><strong>준비 중입니다</strong><p>리모컨 사진과 연결 절차가 준비되면 이곳에 안내됩니다.</p></div></div>
       <figure class="image-card image-card--landscape"><figcaption><b>현재 이용 가이드</b><span>이미지에서 기본 연결 순서를 확인할 수 있어요.</span></figcaption><button class="image-open" type="button" data-image="./images/02_quick_guide.png" data-alt="TV 연결 순서가 포함된 GrowthLog Lounge 이용 가이드"><img src="./images/02_quick_guide.png" alt="TV 연결 순서가 포함된 GrowthLog Lounge 이용 가이드" width="1536" height="1024"><span>눌러서 크게 보기</span></button></figure>
     </section>
 
@@ -105,14 +113,20 @@
       <figure class="image-card"><button class="image-open" type="button" data-image="./images/03_checkout.png" data-alt="GrowthLog Lounge 퇴실 체크리스트"><img src="./images/03_checkout.png" alt="GrowthLog Lounge 퇴실 체크리스트" width="1024" height="1536"><span>눌러서 크게 보기</span></button></figure>
     </section>
 
-    <section class="view detail-view detail-view--warning" id="staff" data-view="staff" aria-labelledby="staff-title" hidden>
-      <div class="detail-head"><a href="#home" class="back-link">← 홈</a><p>STAFF ONLY</p><h2 id="staff-title">관계자 외 출입 금지</h2><span>GrowthLog 운영 물품 보관 공간입니다.</span></div>
-      <div class="warning-banner"><b>STAFF ONLY</b><span>관계자 외 출입을 금지합니다.</span></div>
-      <figure class="image-card"><button class="image-open" type="button" data-image="./images/05_staff_only.png" data-alt="GrowthLog 운영 물품 보관 공간 관계자 외 출입 금지 안내"><img src="./images/05_staff_only.png" alt="GrowthLog 운영 물품 보관 공간 관계자 외 출입 금지 안내" width="1024" height="1536"><span>눌러서 크게 보기</span></button></figure>
+    <section class="view detail-view" id="cctv" data-view="cctv" aria-labelledby="cctv-title" hidden>
+      <div class="detail-head"><a href="#home" class="back-link">← 홈</a><p>SAFETY</p><h2 id="cctv-title">CCTV 촬영 안내</h2><span>안전하고 쾌적한 공간 운영을 위해 CCTV가 운영되고 있습니다.</span></div>
+      <dl class="info-list">
+        <div><dt>촬영 목적</dt><dd>시설 안전, 화재 예방 및 범죄 방지, 시설 관리</dd></div>
+        <div><dt>촬영 범위</dt><dd>라운지 내부 공용 공간</dd></div>
+        <div><dt>촬영 시간</dt><dd>24시간 연중무휴</dd></div>
+        <div><dt>관리 책임자</dt><dd>GrowthLog 운영팀</dd></div>
+        <div><dt>관련 문의</dt><dd>운영팀 문의</dd></div>
+      </dl>
+      <figure class="image-card image-card--landscape"><button class="image-open" type="button" data-image="./images/06_cctv.png" data-alt="GrowthLog Lounge CCTV 촬영 목적, 범위, 시간 및 관리 책임자 안내"><img src="./images/06_cctv.png" alt="GrowthLog Lounge CCTV 촬영 목적, 범위, 시간 및 관리 책임자 안내" width="1536" height="1024"><span>눌러서 크게 보기</span></button></figure>
     </section>
   </main>
 
-  <footer><b>GrowthLog Lounge</b><span>Same Space, Higher Growth.</span></footer>
+  <footer><b>GrowthLog Lounge</b><span>SPACE GUIDE</span></footer>
 
   <dialog class="image-viewer" id="image-viewer" aria-label="안내 이미지 확대 보기">
     <button class="viewer-close" type="button" aria-label="이미지 닫기">×</button>

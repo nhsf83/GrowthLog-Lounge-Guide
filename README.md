@@ -1,6 +1,6 @@
-# GrowthLog Lounge Guide
+# GrowthLog Lounge Space Guide
 
-GrowthLog Lounge를 처음 방문한 외부 대여 이용자가 하나의 QR로 기본 이용 안내, Wi-Fi, TV 연결, 화장실, 퇴실 체크리스트, 관계자 외 출입 금지 안내를 확인하는 모바일 우선 정적 웹사이트입니다.
+GrowthLog Lounge를 처음 방문한 외부 대여 이용자가 하나의 QR로 Welcome, Quick Guide, Wi-Fi, TV 연결, 화장실, 퇴실 체크리스트, CCTV 안내를 확인하는 모바일 우선 정적 웹사이트입니다.
 
 ## 파일 구조
 
@@ -33,7 +33,7 @@ Python이 설치되어 있지 않다면 VS Code의 Live Server 같은 정적 웹
 ### Wi-Fi 변경
 
 1. `index.html`의 `Network`, `Password` 표시값을 변경합니다.
-2. `js/app.js`의 `const password = 'GROWTH1703-2!';` 값도 같은 비밀번호로 변경합니다.
+2. `js/app.js`의 `const password = 'growth1703-2!';` 값도 같은 비밀번호로 변경합니다.
 
 ### 이미지 교체
 
@@ -43,13 +43,13 @@ Python이 설치되어 있지 않다면 VS Code의 Live Server 같은 정적 웹
 - `02_quick_guide.png`: 한눈에 보는 이용 가이드
 - `03_checkout.png`: 퇴실 체크리스트
 - `04_restroom.png`: 화장실 안내
-- `05_staff_only.png`: 관계자 외 출입 금지
+- `06_cctv.png`: CCTV 촬영 안내
 
 브라우저가 이전 이미지를 보여주면 새로고침하거나 캐시를 비운 뒤 확인하세요.
 
 ### TV Guide 추가
 
-1. 새 이미지를 `images/06_tv_remote.png`처럼 추가합니다.
+1. 새 이미지를 `images/07_tv_remote.png`처럼 추가합니다.
 2. `index.html`에서 `data-guide="tv"`가 있는 `<section id="tv">`를 찾습니다.
 3. 준비 중 카드 아래에 설명과 이미지 블록을 추가합니다. 기존 `.image-card` 구조를 복사하면 확대 기능도 그대로 사용할 수 있습니다.
 

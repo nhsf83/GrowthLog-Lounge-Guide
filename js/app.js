@@ -7,6 +7,7 @@
   const viewerImage = viewer.querySelector('img');
   const closeViewerButton = viewer.querySelector('.viewer-close');
   let lastImageButton = null;
+  let keyboardNavigation = false;
 
   function showView() {
     const requested = window.location.hash.slice(1) || 'home';
@@ -19,16 +20,19 @@
     });
 
     document.title = current === 'home'
-      ? 'GrowthLog Lounge Guide'
+      ? 'GrowthLog Lounge Space Guide'
       : `${document.querySelector(`[data-view="${current}"] h2`)?.textContent || '안내'} | GrowthLog Lounge`;
 
     window.scrollTo({ top: 0, behavior: 'auto' });
-    document.querySelector(`[data-view="${current}"] h1, [data-view="${current}"] h2`)?.setAttribute('tabindex', '-1');
-    document.querySelector(`[data-view="${current}"] h1, [data-view="${current}"] h2`)?.focus({ preventScroll: true });
+    const heading = document.querySelector(`[data-view="${current}"] h1, [data-view="${current}"] h2`);
+    if (keyboardNavigation && current !== 'home') {
+      heading?.setAttribute('tabindex', '-1');
+      heading?.focus({ preventScroll: true });
+    }
   }
 
   async function copyPassword() {
-    const password = 'GROWTH1703-2!';
+    const password = 'growth1703-2!';
     const feedback = document.querySelector('#copy-feedback');
     const button = document.querySelector('#copy-password');
     try {
@@ -46,7 +50,7 @@
         input.remove();
         if (!copied) throw new Error('copy failed');
       }
-      feedback.textContent = '비밀번호를 복사했어요 ✓';
+      feedback.textContent = '비밀번호를 복사했습니다. ✓';
       button.textContent = '복사 완료';
       window.setTimeout(() => { feedback.textContent = ''; button.textContent = '비밀번호 복사'; }, 1800);
     } catch {
@@ -66,14 +70,30 @@
     viewer.close();
     viewerImage.src = '';
     document.body.style.overflow = '';
-    lastImageButton?.focus();
+    if (keyboardNavigation) lastImageButton?.focus();
   }
 
   function updateChecklist() {
     const checks = [...document.querySelectorAll('#checkout-list input')];
     document.querySelector('#complete-message').classList.toggle('is-complete', checks.every((check) => check.checked));
+    try {
+      sessionStorage.setItem('growthlog-checkout', JSON.stringify(checks.map((check) => check.checked)));
+    } catch {}
   }
 
+  function restoreChecklist() {
+    try {
+      const saved = JSON.parse(sessionStorage.getItem('growthlog-checkout'));
+      if (!Array.isArray(saved)) return;
+      document.querySelectorAll('#checkout-list input').forEach((check, index) => { check.checked = Boolean(saved[index]); });
+      updateChecklist();
+    } catch {}
+  }
+
+  document.addEventListener('pointerdown', () => { keyboardNavigation = false; }, true);
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Tab' || event.key === 'Enter' || event.key === ' ') keyboardNavigation = true;
+  }, true);
   window.addEventListener('hashchange', showView);
   document.querySelector('#copy-password').addEventListener('click', copyPassword);
   document.querySelectorAll('.image-open').forEach((button) => button.addEventListener('click', () => openViewer(button)));
@@ -81,5 +101,6 @@
   viewer.addEventListener('click', (event) => { if (event.target === viewer) closeViewer(); });
   viewer.addEventListener('close', () => { document.body.style.overflow = ''; });
   document.querySelectorAll('#checkout-list input').forEach((check) => check.addEventListener('change', updateChecklist));
+  restoreChecklist();
   showView();
 })();
