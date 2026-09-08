@@ -49,7 +49,7 @@ main { width: min(100%, 47rem); min-height: calc(100vh - 9rem); margin: 0 auto; 
 .guide-card:focus-visible, button:focus-visible, .back-link:focus-visible, .brand:focus-visible { outline: 3px solid #66a98a; outline-offset: 3px; }
 .guide-card--wide { grid-column: 1 / -1; flex-direction: row; align-items: center; min-height: 6.7rem; gap: 1rem; }
 .card-icon { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; flex: 0 0 auto; border-radius: .9rem; color: var(--green-900); background: var(--green-100); }
-.card-icon svg, .wifi-symbol svg, .status-icon svg { width: 1.65rem; height: 1.65rem; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.card-icon svg, .wifi-symbol svg { width: 1.65rem; height: 1.65rem; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .guide-card b { display: block; font-size: 1.04rem; letter-spacing: -.025em; }
 .guide-card small { display: block; margin-top: .22rem; color: var(--muted); font-size: .8rem; }
 .arrow { margin-left: auto; color: var(--green-700); font-size: 1.5rem; }
@@ -80,12 +80,14 @@ main { width: min(100%, 47rem); min-height: calc(100vh - 9rem); margin: 0 auto; 
 .primary-button { width: 100%; min-height: 3.25rem; margin-top: 1.25rem; border: 0; border-radius: .95rem; color: white; background: var(--green-900); font-weight: 800; cursor: pointer; }
 .copy-feedback { min-height: 1.5rem; margin: .65rem 0 0; text-align: center; color: var(--green-700); font-size: .86rem; font-weight: 700; }
 
-.status-card { display: flex; gap: 1rem; padding: 1.35rem; border: 1px solid var(--line); border-radius: 1.4rem; background: var(--paper); box-shadow: var(--shadow); }
-.status-icon { display: grid; place-items: center; width: 3.3rem; height: 3.3rem; flex: 0 0 auto; border-radius: 1rem; color: white; background: var(--green-900); }
-.status-card small, .status-card strong { display: block; }
-.status-card small { color: var(--green-700); font-weight: 700; }
-.status-card strong { margin-top: .1rem; font-size: 1.2rem; }
-.status-card p { margin: .5rem 0 0; color: var(--muted); font-size: .88rem; }
+.guide-steps { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+.guide-steps span { display: flex; align-items: center; gap: .55rem; min-height: 3.4rem; padding: .65rem .75rem; border-radius: 1rem; color: var(--green-900); background: var(--green-100); font-size: .84rem; font-weight: 700; }
+.guide-steps b { display: grid; place-items: center; width: 1.8rem; height: 1.8rem; flex: 0 0 auto; border-radius: 50%; color: white; background: var(--green-700); font-size: .66rem; }
+.related-link { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 4.5rem; margin: 0 0 1rem; padding: .85rem 1rem; border: 1px solid var(--line); border-radius: 1.1rem; color: var(--green-900); background: var(--green-100); text-decoration: none; }
+.related-link:focus-visible { outline: 3px solid #66a98a; outline-offset: 3px; }
+.related-link b, .related-link small { display: block; }
+.related-link small { margin-top: .1rem; color: var(--muted); font-size: .78rem; font-weight: 500; }
+.related-link > span:last-child { flex: 0 0 auto; font-size: 1.35rem; }
 .floor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
 .floor-grid div { display: flex; flex-direction: column; align-items: center; padding: 1.3rem .5rem; border-radius: 1.2rem; background: var(--green-100); }
 .floor-grid strong { font-size: 2.2rem; line-height: 1; }.floor-grid span { margin-top: .35rem; font-weight: 700; }
@@ -126,6 +128,7 @@ footer span { font-size: .72rem; letter-spacing: .12em; }
   .detail-head { padding-top: 1rem; }
   .back-link { margin-bottom: 2rem; }
   .checklist { grid-template-columns: 1fr 1fr; }
+  .checklist + .related-link { max-width: 50%; margin-left: auto; }
 }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }

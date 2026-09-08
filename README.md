@@ -1,6 +1,6 @@
 # GrowthLog Lounge Space Guide
 
-GrowthLog Lounge를 처음 방문한 외부 대여 이용자가 하나의 QR로 Welcome, Quick Guide, Wi-Fi, TV 연결, 화장실, 퇴실 체크리스트, CCTV 안내를 확인하는 모바일 우선 정적 웹사이트입니다.
+Growth Lounge를 처음 방문한 외부 대여 이용자가 하나의 QR로 Welcome, Quick Guide, Wi-Fi, TV 연결, 화장실, 쓰레기 배출, 퇴실 체크리스트, CCTV와 문의 안내를 확인하는 모바일 우선 정적 웹사이트입니다.
 
 ## 파일 구조
 
@@ -9,7 +9,7 @@ GrowthLog Lounge를 처음 방문한 외부 대여 이용자가 하나의 QR로 
 ├── index.html          # 화면의 문구와 메뉴/상세 영역
 ├── css/style.css       # 색상, 레이아웃, 모바일/데스크톱 스타일
 ├── js/app.js           # 화면 전환, 복사, 체크리스트, 이미지 확대
-└── images/             # 현장 안내 원본 이미지 5종
+└── images/             # 현장 안내 원본 이미지 7종
 ```
 
 ## 로컬 실행 방법
@@ -43,19 +43,21 @@ Python이 설치되어 있지 않다면 VS Code의 Live Server 같은 정적 웹
 - `02_quick_guide.png`: 한눈에 보는 이용 가이드
 - `03_checkout.png`: 퇴실 체크리스트
 - `04_restroom.png`: 화장실 안내
+- `05_tv_guide.png`: TV / 디스플레이 연결 상세 안내
 - `06_cctv.png`: CCTV 촬영 안내
+- `07_waste_guide.png`: 비품 위치와 쓰레기 배출 안내
 
 브라우저가 이전 이미지를 보여주면 새로고침하거나 캐시를 비운 뒤 확인하세요.
 
-### TV Guide 추가
+### TV / Waste Guide 변경
 
-1. 새 이미지를 `images/07_tv_remote.png`처럼 추가합니다.
-2. `index.html`에서 `data-guide="tv"`가 있는 `<section id="tv">`를 찾습니다.
-3. 준비 중 카드 아래에 설명과 이미지 블록을 추가합니다. 기존 `.image-card` 구조를 복사하면 확대 기능도 그대로 사용할 수 있습니다.
+- TV 상세 안내는 `images/05_tv_guide.png`를 동일한 파일명으로 교체합니다.
+- 쓰레기 배출 안내는 `images/07_waste_guide.png`를 동일한 파일명으로 교체합니다.
+- 화면의 요약 문구는 `index.html`의 `<section id="tv">`와 `<section id="waste">`에서 수정합니다.
 
 ### 관리자 연락처 추가
 
-현재 연락처는 미확정이며 가짜 링크를 노출하지 않습니다. `index.html`의 `help-card` 영역에 확정된 전화번호나 공식 문의 링크만 추가하세요.
+현재 문의 채널은 카카오채널 `Growth Lounge`입니다. 공식 채널 URL이 확정되면 `index.html`의 `help-card` 영역에 링크를 추가하세요. 전화번호나 이메일은 확정 전까지 추가하지 않습니다.
 
 ## GitHub Pages 배포 방법
 
@@ -73,4 +75,4 @@ QR Code는 GitHub Pages production URL이 확정된 뒤 한 번만 생성합니�
 
 ## 개인정보 및 외부 서비스
 
-로그인, Analytics, 광고, 위치 추적, Cookie, 외부 DB를 사용하지 않습니다. 퇴실 체크 상태는 브라우저 메모리에만 있으며 새로고침하면 초기화됩니다.
+로그인, Analytics, 광고, 위치 추적, Cookie, 외부 DB를 사용하지 않습니다. 퇴실 체크 상태는 현재 브라우저 탭의 세션에만 저장되며 탭을 닫으면 초기화됩니다.
