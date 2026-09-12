@@ -1,14 +1,14 @@
 # GrowthLog Lounge Space Guide
 
-Growth Lounge 방문자가 방문 전 길찾기와 현장 이용안내를 각각 확인할 수 있는 모바일 우선 정적 웹사이트입니다. Phase 1에서는 기존 root 페이지를 유지하면서 `/visit/`과 `/guide/`를 병행 운영합니다.
+Growth Lounge 방문자가 방문 전 길찾기와 현장 이용안내를 각각 확인할 수 있는 모바일 우선 정적 웹사이트입니다. `/visit/`은 방문 전 안내, `/guide/`는 현장 이용안내의 공식 URL이며 기존 root와 legacy hash는 `/guide/`로 연결됩니다.
 
 ## 파일 구조
 
 ```text
 /
-├── index.html          # 기존 production 현장 안내 유지
+├── index.html          # 기존 root와 hash를 /guide/로 연결
 ├── visit/index.html    # 방문 전 위치·오시는 길 안내
-├── guide/index.html    # 현장 이용안내 신규 병행 URL
+├── guide/index.html    # 현장 이용안내 공식 URL
 ├── css/
 │   ├── style.css       # 기존 현장 안내 스타일
 │   └── visit.css       # 방문 전 안내 스타일
@@ -59,15 +59,15 @@ Python이 설치되어 있지 않다면 VS Code의 Live Server 같은 정적 웹
 
 - TV 상세 안내는 `images/05_tv_guide.png`를 동일한 파일명으로 교체합니다.
 - 쓰레기 배출 안내는 `images/07_waste_guide.png`를 동일한 파일명으로 교체합니다.
-- 화면의 요약 문구는 `index.html`의 `<section id="tv">`와 `<section id="waste">`에서 수정합니다.
+- 화면의 요약 문구는 `guide/index.html`의 `<section id="tv">`와 `<section id="waste">`에서 수정합니다.
 
-### Phase 1 URL 운영
+### URL 운영
 
-- 기존 현장 안내: `https://nhsf83.github.io/GrowthLog-Lounge-Guide/`
+- 기존 호환 주소: `https://nhsf83.github.io/GrowthLog-Lounge-Guide/` → `/guide/`
 - 방문 전 안내: `https://nhsf83.github.io/GrowthLog-Lounge-Guide/visit/`
 - 현장 이용안내: `https://nhsf83.github.io/GrowthLog-Lounge-Guide/guide/`
 
-Phase 1에서는 기존 root URL을 redirect하지 않습니다. 기존 QR과 hash URL은 그대로 유지하며, 신규 URL 검증 후 root migration은 별도 승인 단계에서 진행합니다.
+기존 root의 hash URL은 동일한 `/guide/#hash`로 연결됩니다. 예를 들어 `/#wifi`는 `/guide/#wifi`로 이동합니다.
 
 ### 관리자 연락처 추가
 
@@ -85,7 +85,10 @@ Phase 1에서는 기존 root URL을 redirect하지 않습니다. 기존 QR과 ha
 
 ## QR Code 운영 원칙
 
-QR Code는 GitHub Pages production URL이 확정된 뒤 한 번만 생성합니다. 이후 내용이나 이미지는 같은 repository에 업데이트하여 같은 URL을 유지합니다. 이렇게 하면 현장 QR을 다시 출력하지 않아도 됩니다.
+- QR A — 방문 전 안내: `/visit/`
+- QR B — 현장 이용안내: `/guide/`
+
+기존 root URL 또는 legacy hash로 제작된 QR과 링크는 compatibility redirect를 통해 `/guide/`로 연결됩니다.
 
 ## 개인정보 및 외부 서비스
 
