@@ -56,6 +56,9 @@ main { width: min(100%, 47rem); min-height: calc(100vh - 9rem); margin: 0 auto; 
 
 .help-card { display: flex; gap: 1rem; align-items: center; padding: 1.15rem; border-radius: 1.2rem; background: #e9f1e9; }
 .help-mark { display: grid; place-items: center; width: 2.8rem; height: 2.8rem; flex: 0 0 auto; border-radius: 50%; color: white; background: var(--green-900); font-size: 1.25rem; font-weight: 800; }
+.contact-copy { min-width: 0; flex: 1; }
+.contact-title-row { display: flex; align-items: center; justify-content: space-between; gap: .75rem; }
+.contact-status { flex: 0 0 auto; padding: .22rem .5rem; border: 1px solid #aec4b7; border-radius: 2rem; color: var(--green-700); background: rgba(255,255,255,.55); font-size: .66rem; font-weight: 800; }
 .help-card p { margin: .2rem 0 0; color: var(--muted); font-size: .82rem; }
 .detail-head { padding: .45rem 0 1.25rem; }
 .back-link { display: inline-flex; align-items: center; min-height: 2.75rem; margin-bottom: 1.25rem; padding: 0 .9rem; border: 1px solid var(--line); border-radius: 2rem; background: var(--paper); text-decoration: none; font-size: .88rem; font-weight: 700; }
@@ -88,6 +91,7 @@ main { width: min(100%, 47rem); min-height: calc(100vh - 9rem); margin: 0 auto; 
 .related-link b, .related-link small { display: block; }
 .related-link small { margin-top: .1rem; color: var(--muted); font-size: .78rem; font-weight: 500; }
 .related-link > span:last-child { flex: 0 0 auto; font-size: 1.35rem; }
+.help-card + .related-link { margin-top: 1.5rem; }
 .floor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
 .floor-grid div { display: flex; flex-direction: column; align-items: center; padding: 1.3rem .5rem; border-radius: 1.2rem; background: var(--green-100); }
 .floor-grid strong { font-size: 2.2rem; line-height: 1; }.floor-grid span { margin-top: .35rem; font-weight: 700; }

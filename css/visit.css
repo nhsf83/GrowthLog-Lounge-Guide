@@ -48,7 +48,10 @@ address { font-style: normal; }
 .line-badge--green { background: #16834a; }
 .line-badge--red { background: #cf3344; }
 .map-link, .guide-cta { display: flex; align-items: center; justify-content: space-between; min-height: 3.5rem; margin-top: .75rem; padding: .85rem 1rem; border-radius: 1rem; text-decoration: none; font-weight: 800; }
-.map-link { border: 1px solid var(--green-700); color: var(--green-900); background: var(--paper); }
+.map-link { min-height: 4.25rem; border: 1px solid var(--green-700); color: white; background: var(--green-700); box-shadow: 0 6px 16px rgba(16,55,44,.12); }
+.map-link-copy { display: flex; min-width: 0; flex-direction: column; }
+.map-link-copy small { margin-top: .12rem; color: #dcece3; font-size: .72rem; font-weight: 600; }
+.map-link:active { transform: scale(.99); }
 
 .image-card { overflow: hidden; margin: 0; border: 1px solid var(--line); border-radius: 1.35rem; background: var(--paper); box-shadow: var(--shadow); }
 .image-open { position: relative; display: block; width: 100%; padding: 0; border: 0; color: inherit; background: transparent; cursor: zoom-in; }
@@ -58,6 +61,8 @@ address { font-style: normal; }
 .check-list li { position: relative; min-height: 3.6rem; padding: .9rem 1rem .9rem 2.8rem; border: 1px solid var(--line); border-radius: 1rem; background: var(--paper); }
 .check-list li::before { position: absolute; top: .9rem; left: 1rem; display: grid; place-items: center; width: 1.25rem; height: 1.25rem; border-radius: 50%; color: white; background: var(--green-700); content: "✓"; font-size: .72rem; font-weight: 900; }
 .help-card { margin-top: 2.5rem; padding: 1.1rem; border-radius: 1.2rem; }
+.contact-title-row { display: flex; align-items: center; justify-content: space-between; gap: .75rem; }
+.contact-status { flex: 0 0 auto; padding: .22rem .5rem; border: 1px solid #c8d7cf; border-radius: 2rem; color: var(--green-700); background: var(--green-100); font-size: .66rem; font-weight: 800; }
 .help-card b { color: var(--green-900); }
 .help-card p { margin: .35rem 0 0; color: var(--muted); font-size: .9rem; }
 .guide-cta { min-height: 5rem; color: white; background: var(--green-900); box-shadow: var(--shadow); }
