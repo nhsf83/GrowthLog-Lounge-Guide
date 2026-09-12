@@ -1,15 +1,19 @@
 # GrowthLog Lounge Space Guide
 
-Growth Lounge를 처음 방문한 외부 대여 이용자가 하나의 QR로 Welcome, Quick Guide, Wi-Fi, TV 연결, 화장실, 쓰레기 배출, 퇴실 체크리스트, CCTV와 문의 안내를 확인하는 모바일 우선 정적 웹사이트입니다.
+Growth Lounge 방문자가 방문 전 길찾기와 현장 이용안내를 각각 확인할 수 있는 모바일 우선 정적 웹사이트입니다. Phase 1에서는 기존 root 페이지를 유지하면서 `/visit/`과 `/guide/`를 병행 운영합니다.
 
 ## 파일 구조
 
 ```text
 /
-├── index.html          # 화면의 문구와 메뉴/상세 영역
-├── css/style.css       # 색상, 레이아웃, 모바일/데스크톱 스타일
+├── index.html          # 기존 production 현장 안내 유지
+├── visit/index.html    # 방문 전 위치·오시는 길 안내
+├── guide/index.html    # 현장 이용안내 신규 병행 URL
+├── css/
+│   ├── style.css       # 기존 현장 안내 스타일
+│   └── visit.css       # 방문 전 안내 스타일
 ├── js/app.js           # 화면 전환, 복사, 체크리스트, 이미지 확대
-└── images/             # 현장 안내 원본 이미지 7종
+└── images/             # Product Owner 확정 원본 이미지 9종
 ```
 
 ## 로컬 실행 방법
@@ -46,6 +50,8 @@ Python이 설치되어 있지 않다면 VS Code의 Live Server 같은 정적 웹
 - `05_tv_guide.png`: TV / 디스플레이 연결 상세 안내
 - `06_cctv.png`: CCTV 촬영 안내
 - `07_waste_guide.png`: 비품 위치와 쓰레기 배출 안내
+- `08_doorlock_guide.png`: 출입·도어락 사용 안내
+- `09_directions_guide.png`: 오시는 길 안내
 
 브라우저가 이전 이미지를 보여주면 새로고침하거나 캐시를 비운 뒤 확인하세요.
 
@@ -54,6 +60,14 @@ Python이 설치되어 있지 않다면 VS Code의 Live Server 같은 정적 웹
 - TV 상세 안내는 `images/05_tv_guide.png`를 동일한 파일명으로 교체합니다.
 - 쓰레기 배출 안내는 `images/07_waste_guide.png`를 동일한 파일명으로 교체합니다.
 - 화면의 요약 문구는 `index.html`의 `<section id="tv">`와 `<section id="waste">`에서 수정합니다.
+
+### Phase 1 URL 운영
+
+- 기존 현장 안내: `https://nhsf83.github.io/GrowthLog-Lounge-Guide/`
+- 방문 전 안내: `https://nhsf83.github.io/GrowthLog-Lounge-Guide/visit/`
+- 현장 이용안내: `https://nhsf83.github.io/GrowthLog-Lounge-Guide/guide/`
+
+Phase 1에서는 기존 root URL을 redirect하지 않습니다. 기존 QR과 hash URL은 그대로 유지하며, 신규 URL 검증 후 root migration은 별도 승인 단계에서 진행합니다.
 
 ### 관리자 연락처 추가
 
@@ -67,7 +81,7 @@ Python이 설치되어 있지 않다면 VS Code의 Live Server 같은 정적 웹
 4. 배포 branch(보통 `main`)와 `/(root)`를 선택하고 저장합니다.
 5. 표시된 `https://{username}.github.io/{repository}/` 주소에서 모든 화면과 이미지를 확인합니다.
 
-모든 자산은 `./css`, `./js`, `./images` 상대경로를 사용하므로 GitHub Pages의 하위 repository 경로에서도 동작합니다.
+모든 자산과 내부 이동은 각 HTML 위치를 기준으로 한 상대경로를 사용하므로 GitHub Pages의 project site 하위 경로에서도 동작합니다.
 
 ## QR Code 운영 원칙
 
